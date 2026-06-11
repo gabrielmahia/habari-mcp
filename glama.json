@@ -1,0 +1,58 @@
+{
+  "$schema": "https://glama.ai/mcp/schemas/1.0.0/server.json",
+  "name": "habari-mcp",
+  "version": "0.1.0",
+  "description": "MCP server for Kenya civic information \u2014 Kenya Gazette, government tenders, open data, parliament tracker, citizen feedback channels. 5 tools.",
+  "license": "MIT",
+  "author": {
+    "name": "Gabriel Mahia",
+    "email": "contact@aikungfu.dev"
+  },
+  "tools": [
+    {
+      "name": "gazette_search",
+      "description": "Search Kenya Gazette",
+      "annotations": {
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true
+      }
+    },
+    {
+      "name": "tender_search_guide",
+      "description": "Guide to finding Kenya tenders",
+      "annotations": {
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true
+      }
+    },
+    {
+      "name": "open_data_guide",
+      "description": "Kenya open government data sources",
+      "annotations": {
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true
+      }
+    },
+    {
+      "name": "parliament_tracker",
+      "description": "Track Kenya parliament bills and debates",
+      "annotations": {
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true
+      }
+    },
+    {
+      "name": "citizen_feedback_channels",
+      "description": "Official citizen complaint and feedback channels",
+      "annotations": {
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true
+      }
+    }
+  ]
+}
