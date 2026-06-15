@@ -2,7 +2,7 @@
 from __future__ import annotations
 from typing import Optional
 from fastmcp import FastMCP
-mcp = FastMCP(name="habari-mcp", description="Kenya civic information: gazette, tenders, open data. DEMO.")
+mcp = FastMCP(name="habari-mcp", instructions="Kenya civic information: gazette, tenders, open data. DEMO.")
 
 @mcp.tool(name="gazette_search", description="Guide to searching Kenya Gazette for legal notices, regulations, and appointments. DEMO.")
 def gazette_search(search_type: str, date_range: Optional[str] = None) -> dict:
