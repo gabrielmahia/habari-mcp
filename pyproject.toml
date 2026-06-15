@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "habari-mcp"
-version = "0.1.0"
+version = "0.1.1"
 description = "MCP server for Kenya civic information — Kenya Gazette, government tenders, open data, parliament tracker, citizen feedback channels. 5 tools."
 readme = "README.md"
 license = { text = "MIT" }
