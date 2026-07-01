@@ -3,6 +3,14 @@
 [![habari-mcp Glama score](https://glama.ai/mcp/servers/gabrielmahia/habari-mcp/badges/score.svg)](https://glama.ai/mcp/servers/gabrielmahia/habari-mcp)
 [![smithery badge](https://smithery.ai/badge/@gabrielmahia/habari-mcp)](https://smithery.ai/server/@gabrielmahia/habari-mcp)
 
+
+---
+**Compatible with `claude-sonnet-5`** (released 2026-06-30) — Anthropic's most agentic
+Sonnet yet. Runs multi-step tool chains end-to-end without stopping short.
+Install: `pip install habari-mcp` · Use with any MCP client.
+
+---
+
 MCP server for Kenya civic information — Kenya Gazette, government tenders, open data, parliament tracker, citizen feedback channels. 5 tools.
 
 ## Part of the East Africa Coordination Stack
