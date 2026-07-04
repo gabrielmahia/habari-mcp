@@ -82,3 +82,7 @@ def citizen_feedback_channels(issue_type: str) -> dict:
     return {"source": "DEMO", "issue_type": issue_type,
             "channels": matched or {"general": "eCitizen portal: ecitizen.go.ke"},
             "all_categories": list(CHANNELS.keys())}
+
+def main() -> None:
+    """Console entry point."""
+    mcp.run()
