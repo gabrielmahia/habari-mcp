@@ -1,18 +1,59 @@
 # habari-mcp
-<!-- mcp-name: io.github.gabrielmahia/habari-mcp -->
 
-[![habari-mcp Glama score](https://glama.ai/mcp/servers/gabrielmahia/habari-mcp/badges/score.svg)](https://glama.ai/mcp/servers/gabrielmahia/habari-mcp)
-[![smithery badge](https://smithery.ai/badge/@gabrielmahia/habari-mcp)](https://smithery.ai/server/@gabrielmahia/habari-mcp)
+## Why This Exists
 
+Kenya publishes gazette notices, tenders, parliamentary activity and open data continuously, but the volume makes it effectively invisible. Accountability depends on being able to find the one notice that matters, not on everything being technically public.
 
----
-**Compatible with `claude-sonnet-5`** (released 2026-06-30) — Anthropic's most agentic
-Sonnet yet. Runs multi-step tool chains end-to-end without stopping short.
-Install: `pip install habari-mcp` · Use with any MCP client.
+## Install
 
----
+```bash
+pip install habari-mcp
+```
 
-MCP server for Kenya civic information — Kenya Gazette, government tenders, open data, parliament tracker, citizen feedback channels. 5 tools.
+## Tools (5)
+
+- **`gazette_search`** —   
+  <sub>args: search_type, date_range</sub>
+- **`tender_search_guide`** —   
+  <sub>args: sector, county</sub>
+- **`open_data_guide`** —   
+  <sub>args: data_type</sub>
+- **`parliament_tracker`** —   
+  <sub>args: query_type</sub>
+- **`citizen_feedback_channels`** —   
+  <sub>args: issue_type</sub>
+
+## Example
+
+```python
+from habari_mcp.server import gazette_guide
+
+result = gazette_guide()
+# what the Gazette publishes, how to search, why it matters
+```
+
+## Claude Desktop Integration
+
+Add to `claude_desktop_config.json`:
+
+```json
+{
+  "mcpServers": {
+    "habari-mcp": {
+      "command": "python",
+      "args": ["-m", "habari_mcp.server"]
+    }
+  }
+}
+```
+
+## Data & Disclaimers
+
+Pointers to official sources rather than a live mirror. For legal effect, always read the notice in the Kenya Gazette itself.
+
+Every tool response carries a `source` field. Responses labelled `DEMO` are
+illustrative reference data, not a live feed — verify against the authority
+named in the response before acting on it.
 
 ## Part of the East Africa Coordination Stack
 
