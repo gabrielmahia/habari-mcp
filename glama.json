@@ -1,8 +1,8 @@
 {
   "$schema": "https://glama.ai/mcp/schemas/1.0.0/server.json",
   "name": "habari-mcp",
-  "version": "0.1.0",
-  "description": "MCP server for Kenya civic information \u2014 Kenya Gazette, government tenders, open data, parliament tracker, citizen feedback channels. 5 tools.",
+  "version": "0.1.3",
+  "description": "MCP server for Kenya civic information — Kenya Gazette, government tenders, open data, parliament tracker, citizen feedback channels",
   "license": "MIT",
   "author": {
     "name": "Gabriel Mahia",
@@ -11,7 +11,7 @@
   "tools": [
     {
       "name": "gazette_search",
-      "description": "Search Kenya Gazette",
+      "description": "Guide to searching Kenya Gazette for legal notices, regulations, and appointments. DEMO.",
       "annotations": {
         "readOnlyHint": true,
         "destructiveHint": false,
@@ -20,7 +20,7 @@
     },
     {
       "name": "tender_search_guide",
-      "description": "Guide to finding Kenya tenders",
+      "description": "Guide to finding and accessing Kenya government tenders. DEMO.",
       "annotations": {
         "readOnlyHint": true,
         "destructiveHint": false,
@@ -29,7 +29,7 @@
     },
     {
       "name": "open_data_guide",
-      "description": "Kenya open government data sources",
+      "description": "Kenya open government data sources and APIs. DEMO.",
       "annotations": {
         "readOnlyHint": true,
         "destructiveHint": false,
@@ -38,7 +38,7 @@
     },
     {
       "name": "parliament_tracker",
-      "description": "Track Kenya parliament bills and debates",
+      "description": "Track Kenya parliament: bills, Hansard, committees, and petitions. DEMO.",
       "annotations": {
         "readOnlyHint": true,
         "destructiveHint": false,
@@ -47,7 +47,7 @@
     },
     {
       "name": "citizen_feedback_channels",
-      "description": "Official citizen complaint and feedback channels",
+      "description": "Official channels for Kenyan citizen feedback, complaints, and government access. DEMO.",
       "annotations": {
         "readOnlyHint": true,
         "destructiveHint": false,
@@ -68,5 +68,8 @@
     "mcp",
     "useful-rails",
     "ai-agents"
+  ],
+  "maintainers": [
+    "gabrielmahia"
   ]
 }
