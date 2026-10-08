@@ -1,4 +1,5 @@
 # habari-mcp
+<!-- mcp-name: io.github.gabrielmahia/habari-mcp -->
 
 ## Why This Exists
 
