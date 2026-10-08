@@ -1,11 +1,17 @@
 """HabariMCP — Kenya Civic Information Tools (5 tools). All data DEMO."""
 from __future__ import annotations
+
 from typing import Optional
+
 from fastmcp import FastMCP
+
+# Annotations tell clients which tools are safe to auto-approve (read-only, no side effects).
+READ_ONLY = {"readOnlyHint": True, "idempotentHint": True, "openWorldHint": False}
+
 mcp = FastMCP(name="habari-mcp", instructions="Kenya civic information: gazette, tenders, open data. DEMO.")
 
-@mcp.tool(name="gazette_search", description="Guide to searching Kenya Gazette for legal notices, regulations, and appointments. DEMO.")
-def gazette_search(search_type: str, date_range: Optional[str] = None) -> dict:
+@mcp.tool(name="gazette_search", description="Guide to searching Kenya Gazette for legal notices, regulations, and appointments. DEMO.", annotations=READ_ONLY)
+def gazette_search(search_type: str, date_range: str | None = None) -> dict:
     TYPES = {
         "legal_notice": "Statutory rules, regulations, and subsidiary legislation. Numbered sequentially each year.",
         "appointment": "Government officer appointments, board memberships, parastatal officials.",
@@ -19,8 +25,8 @@ def gazette_search(search_type: str, date_range: Optional[str] = None) -> dict:
             "description": desc, "access": "kenyalaw.org/kenya_gazette — free online. Kenya National Library for physical copies.",
             "api": "Kenya Gazette API: api.kenyalaw.org (if available)", "date_range": date_range}
 
-@mcp.tool(name="tender_search_guide", description="Guide to finding and accessing Kenya government tenders. DEMO.")
-def tender_search_guide(sector: Optional[str] = None, county: Optional[str] = None) -> dict:
+@mcp.tool(name="tender_search_guide", description="Guide to finding and accessing Kenya government tenders. DEMO.", annotations=READ_ONLY)
+def tender_search_guide(sector: str | None = None, county: str | None = None) -> dict:
     return {"source": "DEMO — tenders.go.ke for official tenders", "sector": sector, "county": county,
             "portals": [
                 {"name": "IFMIS eTender Portal", "url": "tenders.go.ke", "coverage": "All national government tenders"},
@@ -32,7 +38,7 @@ def tender_search_guide(sector: Optional[str] = None, county: Optional[str] = No
             "thresholds": {"open_tender": "Above KES 30M (national), KES 10M (county)",
                            "restricted": "KES 3M–30M", "quotation": "Under KES 3M"}}
 
-@mcp.tool(name="open_data_guide", description="Kenya open government data sources and APIs. DEMO.")
+@mcp.tool(name="open_data_guide", description="Kenya open government data sources and APIs. DEMO.", annotations=READ_ONLY)
 def open_data_guide(data_type: str) -> dict:
     SOURCES = {
         "population": {"source": "Kenya National Bureau of Statistics (KNBS)", "url": "knbs.or.ke/open-data", "format": "CSV/API"},
@@ -50,7 +56,7 @@ def open_data_guide(data_type: str) -> dict:
             "sources": matched or {"general": "opendata.go.ke — Kenya Open Data Portal"},
             "all_categories": list(SOURCES.keys())}
 
-@mcp.tool(name="parliament_tracker", description="Track Kenya parliament: bills, Hansard, committees, and petitions. DEMO.")
+@mcp.tool(name="parliament_tracker", description="Track Kenya parliament: bills, Hansard, committees, and petitions. DEMO.", annotations=READ_ONLY)
 def parliament_tracker(query_type: str) -> dict:
     GUIDE = {
         "bill": "Bills tracker: parliament.go.ke → Bills. First reading → Second (debate) → Committee → Third → Senate → Presidential assent.",
@@ -64,7 +70,7 @@ def parliament_tracker(query_type: str) -> dict:
     return {"source": "DEMO — parliament.go.ke", "query": query_type,
             "information": matched or GUIDE, "portal": "parliament.go.ke"}
 
-@mcp.tool(name="citizen_feedback_channels", description="Official channels for Kenyan citizen feedback, complaints, and government access. DEMO.")
+@mcp.tool(name="citizen_feedback_channels", description="Official channels for Kenyan citizen feedback, complaints, and government access. DEMO.", annotations=READ_ONLY)
 def citizen_feedback_channels(issue_type: str) -> dict:
     CHANNELS = {
         "corruption": ["Ethics and Anti-Corruption Commission (EACC): eacc.go.ke | 0800722000 (free)",
