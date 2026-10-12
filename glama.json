@@ -11,7 +11,7 @@
   "tools": [
     {
       "name": "gazette_search",
-      "description": "Guide to searching Kenya Gazette for legal notices, regulations, and appointments. DEMO.",
+      "description": "Explain the types of notice in the Kenya Gazette (legal notices, appointments, company notices and others) and where to read the Gazette. Use when someone asks what a Gazette notice type is or how to find one. search_type matches a type by name; an unrecognised type returns an error listing the valid ones. date_range is only echoed back. This tool does NOT search the Gazette. Returns the type description and the access points (kenyalaw.org). Labelled DEMO. Read-only; no side effects.",
       "annotations": {
         "readOnlyHint": true,
         "destructiveHint": false,
@@ -20,7 +20,7 @@
     },
     {
       "name": "tender_search_guide",
-      "description": "Guide to finding and accessing Kenya government tenders. DEMO.",
+      "description": "Where to find Kenyan public tenders and what bidders need: the IFMIS eTender portal, county eProcurement, the Gazette, eligibility documents and tender value thresholds. Use when someone asks how to find or qualify for a tender. sector and county are only echoed back; this tool does NOT list live tenders. Returns the portals, eligibility requirements and thresholds. Labelled DEMO: confirm at tenders.go.ke. Read-only; no side effects.",
       "annotations": {
         "readOnlyHint": true,
         "destructiveHint": false,
@@ -29,7 +29,7 @@
     },
     {
       "name": "open_data_guide",
-      "description": "Kenya open government data sources and APIs. DEMO.",
+      "description": "Where to find Kenyan open data by topic (population, health, budget and others) with the publisher, URL and format. Use when someone asks where to get official data. data_type matches a category by name; if none match, the general Kenya Open Data portal is returned. Returns the matching sources and all_categories. Portal addresses labelled DEMO and subject to change. Read-only; no side effects.",
       "annotations": {
         "readOnlyHint": true,
         "destructiveHint": false,
@@ -38,7 +38,7 @@
     },
     {
       "name": "parliament_tracker",
-      "description": "Track Kenya parliament: bills, Hansard, committees, and petitions. DEMO.",
+      "description": "How to follow the Parliament of Kenya: the bills tracker, Hansard, committees and related. Use when someone asks how to track a bill or find a debate. Keywords in query_type select entries; if none match, ALL guidance is returned. This tool does NOT fetch live bill status. Returns the information and the parliament.go.ke portal. Labelled DEMO. Read-only; no side effects.",
       "annotations": {
         "readOnlyHint": true,
         "destructiveHint": false,
@@ -47,7 +47,7 @@
     },
     {
       "name": "citizen_feedback_channels",
-      "description": "Official channels for Kenyan citizen feedback, complaints, and government access. DEMO.",
+      "description": "Where to report a problem to Kenyan authorities by issue type, such as corruption (EACC) or service delivery, with contact details. Use when someone asks where to complain. Keywords in issue_type select channels; if none match, the eCitizen portal is returned. Returns the channels and all_categories. Contact numbers are labelled DEMO and unverified: confirm before relying. Read-only; no side effects.",
       "annotations": {
         "readOnlyHint": true,
         "destructiveHint": false,
