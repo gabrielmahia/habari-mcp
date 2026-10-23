@@ -1,6 +1,8 @@
 """HabariMCP — Kenya Civic Information Tools (5 tools). All data DEMO."""
 from __future__ import annotations
 
+from importlib.metadata import PackageNotFoundError
+from importlib.metadata import version as _pkg_version
 from typing import Annotated, Optional
 
 from fastmcp import FastMCP
@@ -9,7 +11,13 @@ from pydantic import Field
 # Annotations tell clients which tools are safe to auto-approve (read-only, no side effects).
 READ_ONLY = {"readOnlyHint": True, "idempotentHint": True, "openWorldHint": False}
 
-mcp = FastMCP(name="habari-mcp", instructions="Kenya civic information: gazette, tenders, open data. DEMO.")
+try:
+    _VERSION = _pkg_version("habari-mcp")
+except PackageNotFoundError:  # a source tree that was never installed
+    _VERSION = "0+unknown"
+
+
+mcp = FastMCP(name="habari-mcp", instructions="Kenya civic information: gazette, tenders, open data. DEMO.", version=_VERSION)
 
 @mcp.tool(name="gazette_search", description="Explain the types of notice in the Kenya Gazette (legal notices, appointments, company notices and others) and where to read the Gazette. Use when someone asks what a Gazette notice type is or how to find one. search_type matches a type by name; an unrecognised type returns an error listing the valid ones. date_range is only echoed back. This tool does NOT search the Gazette. Returns the type description and the access points (kenyalaw.org). Labelled DEMO. Read-only; no side effects.", annotations=READ_ONLY)
 def gazette_search(search_type: Annotated[str, Field(description="Notice type such as legal_notice, appointment or company_notice; an unrecognised type returns an error.")], date_range: Annotated[str | None, Field(description="Optional; only echoed back.")] = None) -> dict:
