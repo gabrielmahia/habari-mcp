@@ -4,15 +4,14 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "habari-mcp"
-version = "0.1.9"
+version = "0.1.10"
 description = "MCP server for Kenya civic information — Kenya Gazette, government tenders, open data, parliament tracker, citizen feedback channels. 5 tools."
 readme = "README.md"
 license = "MIT"
-requires-python = ">=3.10"
+requires-python = ">=3.11"
 dependencies = ["fastmcp>=0.9", "pydantic>=2.0"]
 license-files = ["LICENSE"]
 classifiers = [
-    "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
     "Programming Language :: Python :: 3.13",
