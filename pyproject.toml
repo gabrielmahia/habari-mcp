@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "habari-mcp"
-version = "0.1.10"
+version = "0.1.11"
 description = "MCP server for Kenya civic information — Kenya Gazette, government tenders, open data, parliament tracker, citizen feedback channels. 5 tools."
 readme = "README.md"
 license = "MIT"
@@ -23,6 +23,7 @@ classifiers = [
 habari-mcp = "habari_mcp.server:mcp.run"
 
 [project.urls]
+Issues = "https://github.com/gabrielmahia/habari-mcp/issues"
 Homepage = "https://github.com/gabrielmahia/habari-mcp"
 Documentation = "https://github.com/gabrielmahia/nairobi-stack"
 "MCP Registry" = "https://registry.modelcontextprotocol.io"
