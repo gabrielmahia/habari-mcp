@@ -3,7 +3,7 @@ message: "If you use this software, please cite it as below."
 type: software
 title: "habari-mcp"
 abstract: "MCP server for Kenya civic information — Kenya Gazette, government tenders, open data, parliament tracker, citizen feedback channels. 5 tools."
-version: "0.1.11"
+version: "0.1.12"
 authors:
   - family-names: "Mahia"
     given-names: "Gabriel"
